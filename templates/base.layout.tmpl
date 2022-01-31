@@ -44,7 +44,7 @@
                     <a class="nav-link" href="/search-availability" tabindex="-1" aria-disabled="true">Book Now</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+                    <a class="nav-link" href="/contact" tabindex="-1" aria-disabled="true">Contact</a>
                 </li>
             </ul>
         </div>
@@ -80,60 +80,30 @@
     <script>
         let attention = Prompt();
 
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                let forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-        document.getElementById("colorButton").addEventListener("click", function() {
-
-            let html = `<form id="check-availability-form" action="" method="post" novalidate class="needs-validation">
-                             <div class="form-row">
-                                 <div class="col">
-                                     <div class="form-row" id="reservation-dates-modal">
-                                         <div class="col">
-                                             <input disabled required class="form-control" type="text" name="sart" id="start" placeholder="Arrival">
-                                         </div>
-                                         <div class="col">
-                                             <input disabled required class="form-control" type="text" name="end" id="end" placeholder="Departure">
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </form>`
+          
 
 
+      
 
+(function() {
+              'use strict';
+              window.addEventListener('load', function() {
+                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                  let forms = document.getElementsByClassName('needs-validation');
+                  // Loop over them and prevent submission
+                  Array.prototype.filter.call(forms, function(form) {
+                      form.addEventListener('submit', function(event) {
+                          if (form.checkValidity() === false) {
+                              event.preventDefault();
+                              event.stopPropagation();
+                          }
+                          form.classList.add('was-validated');
+                      }, false);
+                  });
+              }, false);
+          })();
+   
 
-
-
-
-
-
-            attention.custom({
-                msg: html,
-                title: "Choose your dates"
-            });
-        })
-
-
-
-        const elem = document.getElementById('reservation-dates');
-        const rangepicker = new DateRangePicker(elem, {
-            format: "yyyy-mm-dd",
-        });
 
         function notify(msg, msgType) {
             notie.alert({
